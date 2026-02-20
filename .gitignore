@@ -1,0 +1,11 @@
+# Credentials
+credentials.json
+.env
+
+# Output folders
+cats/
+dogs/
+
+# Python
+__pycache__/
+*.pyc
