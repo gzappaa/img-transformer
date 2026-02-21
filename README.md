@@ -20,7 +20,7 @@ This project downloads images from a Google Drive folder, resizes them, adds cre
 1. Clone this repository:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/gzappaa/img-transformer/
 cd img-transformer
 ```
 
@@ -36,7 +36,10 @@ Build the Docker image:
 
 Run the Docker image:
 
-```docker run -it `
+
+### Windows:
+```
+docker run -it `
   -v "${PWD}/cats:/app/cats" `
   -v "${PWD}/dogs:/app/dogs" `
   -v "${PWD}/.env:/app/.env" `
@@ -44,11 +47,21 @@ Run the Docker image:
   --env-file "${PWD}/.env" `
   img-transformer
   ```
+### Linux/Mac:
+```
+docker run -it \
+  -v "${PWD}/cats:/app/cats" \
+  -v "${PWD}/dogs:/app/dogs" \
+  -v "${PWD}/.env:/app/.env" \
+  -v "${PWD}/credentials.json:/app/credentials.json" \
+  --env-file "${PWD}/.env" \
+  img-transformer
+```
 
-Requirements
+## Requirements
 
-Python 3.13+
+### Python 3.13+
 
-Docker
+### Docker
 
-Dependencies are in requirements.txt (Torch, torchvision, Pillow, Google API client, python-dotenv)
+### Dependencies are in requirements.txt (Torch, torchvision, Pillow, Google API client, python-dotenv)
